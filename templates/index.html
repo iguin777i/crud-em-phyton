@@ -38,54 +38,54 @@
     </div>
 
     <!-- Modal Adicionar/Editar -->
-    <div class="modal fade" id="pneuModal" tabindex="-1">
+    <div class="modal fade" id="pneuModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitle">Adicionar Pneu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
                     <form id="pneuForm">
                         <input type="hidden" id="pneuId">
                         <div class="mb-3">
-                            <label class="form-label">Dimensões</label>
+                            <label for="dimensoes" class="form-label">Dimensões</label>
                             <input type="text" class="form-control" id="dimensoes" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Índice de Carga</label>
+                            <label for="indice_carga" class="form-label">Índice de Carga</label>
                             <input type="text" class="form-control" id="indice_carga" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Índice de Velocidade</label>
+                            <label for="indice_velocidade" class="form-label">Índice de Velocidade</label>
                             <input type="text" class="form-control" id="indice_velocidade" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Tipo</label>
+                            <label for="tipo" class="form-label">Tipo</label>
                             <input type="text" class="form-control" id="tipo" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Condições Climáticas</label>
+                            <label for="condicoes_climaticas" class="form-label">Condições Climáticas</label>
                             <input type="text" class="form-control" id="condicoes_climaticas">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Eficiência</label>
+                            <label for="eficiencia" class="form-label">Eficiência</label>
                             <input type="text" class="form-control" id="eficiencia">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Ruído</label>
+                            <label for="ruido" class="form-label">Ruído</label>
                             <input type="number" class="form-control" id="ruido">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Marca</label>
+                            <label for="marca" class="form-label">Marca</label>
                             <input type="text" class="form-control" id="marca" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Durabilidade</label>
+                            <label for="durabilidade" class="form-label">Durabilidade</label>
                             <input type="text" class="form-control" id="durabilidade">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Quantidade</label>
+                            <label for="quantidade" class="form-label">Quantidade</label>
                             <input type="number" class="form-control" id="quantidade" required>
                         </div>
                     </form>

@@ -2,7 +2,15 @@ let pneuModal;
 let pneus = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    pneuModal = new bootstrap.Modal(document.getElementById('pneuModal'));
+    pneuModal = new bootstrap.Modal(document.getElementById('pneuModal'), {
+        focus: true
+    });
+    
+    // Adiciona evento para gerenciar o foco quando o modal é aberto
+    document.getElementById('pneuModal').addEventListener('shown.bs.modal', () => {
+        document.getElementById('dimensoes').focus();
+    });
+    
     loadPneus();
     
     document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -32,8 +40,8 @@ function renderPneus(pneusToRender) {
             <td>${pneu.tipo}</td>
             <td>${pneu.quantidade}</td>
             <td class="action-buttons">
-                <button class="btn btn-sm btn-info" onclick="editPneu(${pneu.id})">Editar</button>
-                <button class="btn btn-sm btn-danger" onclick="deletePneu(${pneu.id})">Excluir</button>
+                <button class="btn btn-sm btn-info" onclick="editPneu(${pneu.id})" aria-label="Editar pneu ${pneu.dimensoes}">Editar</button>
+                <button class="btn btn-sm btn-danger" onclick="deletePneu(${pneu.id})" aria-label="Excluir pneu ${pneu.dimensoes}">Excluir</button>
             </td>
         `;
         tbody.appendChild(tr);
