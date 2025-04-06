@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque de Pneus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Gestão de Estoque de Pneus</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar pneus...">
+            </div>
+            <div class="col-md-6 text-end">
+                <button class="btn btn-primary" onclick="showAddModal()">Adicionar Pneu</button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Dimensões</th>
+                        <th>Marca</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="pneusTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Adicionar/Editar -->
+    <div class="modal fade" id="pneuModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Adicionar Pneu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="pneuForm">
+                        <input type="hidden" id="pneuId">
+                        <div class="mb-3">
+                            <label class="form-label">Dimensões</label>
+                            <input type="text" class="form-control" id="dimensoes" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Índice de Carga</label>
+                            <input type="text" class="form-control" id="indice_carga" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Índice de Velocidade</label>
+                            <input type="text" class="form-control" id="indice_velocidade" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo</label>
+                            <input type="text" class="form-control" id="tipo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Condições Climáticas</label>
+                            <input type="text" class="form-control" id="condicoes_climaticas">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Eficiência</label>
+                            <input type="text" class="form-control" id="eficiencia">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ruído</label>
+                            <input type="number" class="form-control" id="ruido">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Marca</label>
+                            <input type="text" class="form-control" id="marca" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Durabilidade</label>
+                            <input type="text" class="form-control" id="durabilidade">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="savePneu()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
